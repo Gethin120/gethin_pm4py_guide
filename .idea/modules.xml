@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/gethin_api.iml" filepath="$PROJECT_DIR$/.idea/gethin_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/gethin_pm4py_guide.iml" filepath="$PROJECT_DIR$/.idea/gethin_pm4py_guide.iml" />
     </modules>
   </component>
 </project>
