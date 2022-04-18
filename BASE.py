@@ -84,13 +84,14 @@ import pm4py_examples.streaming_conformance_footprints
 import pm4py_examples.streaming_conformance_tbr
 import pm4py_examples.streaming_conformance_temporal_profile
 # 导入xes文件
+
 from pm4py.objects.log.importer.xes.importer import apply as xes_importer
 log = xes_importer('trace_.xes')
 
 # 使用alpha算法挖掘Petri网
 from pm4py.algo.discovery.alpha.algorithm import apply as alpha_miner
 net, initial_marking, final_marking = alpha_miner(log)
-
+net, im, fm=alpha_miner(log)
 # Petri网可视化
 from pm4py.visualization.petri_net import visualizer as pn_vis
 petri_net_alpha = pn_vis.apply(net,initial_marking,final_marking)
