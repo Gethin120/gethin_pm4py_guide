@@ -13,3 +13,4 @@ net, im, fm = alpha_miner(log)
 net_playout = petri_sim(net, im, fm, parameters={Parameters.NO_TRACES: 100, Parameters.MAX_TRACE_LENGTH: 20})
 variants_count = case_statistics.get_variant_statistics(net_playout)
 print(variants_count)
+#todo 使用蒙特卡罗方式模拟Petri网，参考实例

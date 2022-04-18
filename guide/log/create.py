@@ -1,5 +1,7 @@
-from copy import deepcopy
+"""
 
+"""
+from copy import deepcopy
 from pm4py.objects.log.obj import EventLog, Trace, Event
 
 
