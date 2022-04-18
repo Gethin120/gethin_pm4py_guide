@@ -1,1 +1,1 @@
-from pm4py.ml.split_train_test
+from pm4py.ml import split_train_test
