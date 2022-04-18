@@ -83,3 +83,32 @@ import pm4py_examples.streaming_discovery_dfg
 import pm4py_examples.streaming_conformance_footprints
 import pm4py_examples.streaming_conformance_tbr
 import pm4py_examples.streaming_conformance_temporal_profile
+# 导入xes文件
+from pm4py.objects.log.importer.xes.importer import apply as xes_importer
+log = xes_importer('trace_.xes')
+
+# 使用alpha算法挖掘Petri网
+from pm4py.algo.discovery.alpha.algorithm import apply as alpha_miner
+net, initial_marking, final_marking = alpha_miner(log)
+
+# Petri网可视化
+from pm4py.visualization.petri_net import visualizer as pn_vis
+petri_net_alpha = pn_vis.apply(net,initial_marking,final_marking)
+pn_vis.view(petri_net_alpha)
+
+#导入pnml格式的Petri网
+from pm4py.objects.petri_net.importer.importer import apply as pnml_importer
+from pm4py.objects.petri_net.importer.importer import Variants
+net, initial_marking, final_marking = pnml_importer('model/lj_final.pnml', variant=Variants.PNML)
+
+# 检查Petri网的稳健性
+from pm4py.algo.analysis.woflan.algorithm import apply as soudness
+soudness(net,initial_marking,final_marking)
+
+# 评估Petri网
+from pm4py.evaluation import evaluator
+result = evaluator.apply(log, net, initial_marking, final_marking)
+result_fitness=result['fitness']['log_fitness']
+result_precision=result['precision']
+result_f=result['fscore']
+# Petri网通过matplotlib可视化

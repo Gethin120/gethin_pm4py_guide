@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    完整的Petri网有五种元素：palce、transition、arc、initialMarking、finalMarking
+    place：<place id="p_1">
+                <name>
+                    <text>p_1</text>
+                </name>
+            </place>
+    transition：<transition id="ST">
+                <name>
+                    <text>ST</text>
+                </name>
+            </transition>
+    arc：<arc id="arc0" source="p_0" target="ST"/> source和target一个为place，一个为transition
+    initialMarking：在p_0增加<initialMarking>
+                    <text>1</text>
+                </initialMarking>
+    finalMarking：增加<finalmarkings>，text除结束标志为1，其他全部为0，p_0也要写
+-->
+<pnml>
+    <net id="net1" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+        <page id="n0">
+            <place id="p_0">
+                <name>
+                    <text>p_0</text>
+                </name>
+                <initialMarking>
+                    <text>1</text>
+                </initialMarking>
+            </place>
+            <place id="p_1">
+                <name>
+                    <text>p_1</text>
+                </name>
+            </place>
+
+            <place id="p_24">
+                <name>
+                    <text>p_24</text>
+                </name>
+            </place>
+            <place id="p_25">
+                <name>
+                    <text>p_25</text>
+                </name>
+            </place>
+            <transition id="ST">
+                <name>
+                    <text>ST</text>
+                </name>
+            </transition>
+
+            <transition id="ROC">
+                <name>
+                    <text>ROC</text>
+                </name>
+            </transition>
+            <transition id="FSA">
+                <name>
+                    <text>FSA</text>
+                </name>
+            </transition>
+
+
+            <arc id="arc0" source="p_0" target="ST"/>
+
+            <arc id="arc53" source="FSA" target="p_25"/>
+        </page>
+        <finalmarkings>
+            <marking>
+                <place idref="p_0">
+                    <text>0</text>
+                </place>
+                <place idref="p_1">
+                    <text>0</text>
+                </place>
+
+                <place idref="p_24">
+                    <text>0</text>
+                </place>
+                <place idref="p_25">
+                    <text>1</text>
+                </place>
+
+            </marking>
+        </finalmarkings>
+    </net>
+</pnml>
