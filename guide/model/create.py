@@ -1,6 +1,6 @@
 """
 创建Petri网的方式有两种：
-一、使用python创建对象形式，如本代码所示
+一、使用python创建对象形式，如本程序所示
 二、如create_petri_net.pnml所示
 """
 
@@ -51,7 +51,6 @@ im[source] = 1
 
 fm = Marking()
 fm[sink] = 1
-
 
 petri_net_alpha = pn_vis.apply(net, im, fm)
 pn_vis.view(petri_net_alpha)
