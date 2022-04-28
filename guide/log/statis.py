@@ -53,9 +53,9 @@ def cycle_info(log):
 
 
 if __name__ == '__main__':
-    log = xes_importer('../statics/log/running-example.xes')
-    # log = xes_importer('../statics/log/receipt.xes')
+    # log = xes_importer('../statics/log/running-example.xes')
+    log = xes_importer('../statics/log/receipt.xes')
     base_info(log)
-    # cycle_info(log)
+    cycle_info(log)
 
 
