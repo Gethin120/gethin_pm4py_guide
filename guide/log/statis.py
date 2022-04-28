@@ -7,6 +7,7 @@
 开始活动、结束活动
 循环
 """
+import pm4py
 from pm4py.objects.log.importer.xes.importer import apply as xes_importer
 from pm4py.statistics.attributes.log.get import *
 from pm4py.statistics.traces.generic.log import case_statistics
@@ -49,20 +50,12 @@ def cycle_info(log):
     bb = get_rework_log(log)
     print(bb)
 
-def time_info(log):
-    from pm4py.statistics.sojourn_time.log.get import apply
-
-    from pm4py.statistics.traces.cycle_time.log.get import apply
-
-    from pm4py.statistics.passed_time.log.algorithm import apply
 
 
 if __name__ == '__main__':
-    # log = xes_importer('../statics/log/running-example.xes')
-    log = xes_importer('../statics/log/receipt.xes')
-    # base_info(log)
+    log = xes_importer('../statics/log/running-example.xes')
+    # log = xes_importer('../statics/log/receipt.xes')
+    base_info(log)
     # cycle_info(log)
 
-    time_info(log)
-    # todo
-    # print(get_events_distribution(log))
+
